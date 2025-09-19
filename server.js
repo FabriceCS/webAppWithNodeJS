@@ -28,12 +28,12 @@ app.get('/api/v1/whisper/:id', async (req, res) => {
 })
 
 app.post('/api/v1/whisper', async (req, res) => {
-  const { message } = req.body;
+  const { message } = req.body
   if (!message) {
-    res.sendStatus(400);
+    res.sendStatus(400)
   } else {
-    const whisper = await create(message);
-    res.status(201).json(whisper);
+    const whisper = await create(message)
+    res.status(201).json(whisper)
   }
 })
 
@@ -43,12 +43,12 @@ app.put('/api/v1/whisper/:id', async (req, res) => {
   if (!message) {
     res.sendStatus(400)
   } else {
-    const whisper = await getById(id);
+    const whisper = await getById(id)
     if (!whisper) {
-      res.sendStatus(404);
+      res.sendStatus(404)
     } else {
-      await updateById(id, message);
-      res.sendStatus(200);
+      await updateById(id, message)
+      res.sendStatus(200)
     }
   }
 })
