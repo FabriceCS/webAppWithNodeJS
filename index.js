@@ -1,6 +1,8 @@
 import { app } from './server.js'
 import mongoose from 'mongoose'
+import dotenv from 'dotenv';
 
+dotenv.config(); // Load environment variables
 const port = process.env.PORT // in the file .env, the environment variable PORT is set to 3000
 
 try {
